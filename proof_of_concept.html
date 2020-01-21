@@ -1,0 +1,40 @@
+<html>
+  <h1>Server Logs:</h1>
+  <ul id="list">
+
+  </ul>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+
+<script>
+  $( document ).ready(function() {
+    console.log('hello, world');
+    setInterval(checkServer, 1000);
+});
+
+
+  function checkServer() {
+    flowerUsers = ['Eric', 'Liana']
+    randomNum = Math.floor(Math.random() * 6);
+    if (randomNum > 1) {
+    } else {
+      now = new Date;
+      $('#list').append(`<li>${flowerUsers[randomNum]} pressed the button at ${minFormat(now.getHours())}:${minFormat(now.getMinutes())}:${minFormat(now.getSeconds())}</li>`);
+    }
+  }
+
+  function minFormat(number) {
+    if (number >= 10) { return number }
+
+    return "0" + number;
+  }
+
+</script>
+
+<style>
+  li {
+    padding: 10px;
+  }
+</style>
